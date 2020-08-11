@@ -1,3 +1,8 @@
+<?php
+
+include_once("manage/config.php");
+$result = mysqli_query($mysqli, "SELECT * FROM request ORDER BY id DESC"); // using mysqli_query instead
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,7 +25,23 @@
 
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="table/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="table/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="table/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="table/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="table/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="table/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="table/css/util.css">
+	<link rel="stylesheet" type="text/css" href="table/css/main.css">
+<!--===============================================================================================-->
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
@@ -77,10 +98,69 @@
     </div>
 
 
+    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+    	<div class="container">
+    		<div class="row d-flex no-gutters">
+    			<div class="col-md-6 col-lg-6 d-flex">
+    				<div class="img-about img d-flex align-items-stretch">
+    					<div class="overlay"></div>
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/hd.jpg)">
+	    				</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-6 pl-md-5 py-5">
+    				<div class="row justify-content-start pb-3">
+		          <div class="col-md-12 heading-section ftco-animate">
+		          	
+              </div>
+	          </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
    
-    
+    <div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">UserName</th>
+									<th class="cell100 column2">Email</th>
+									<th class="cell100 column3">Mobile</th>
+									<th class="cell100 column4">BloodGroup</th>
+								
+								</tr>
+							</thead>
+						</table>
+					</div>
 
-	
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+							<?php 
+//while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
+while($res = mysqli_fetch_array($result)) { 		
+  echo "<tr>";
+  echo "<td>".$res['UserName']."</td>";
+  echo "<td>".$res['Email']."</td>";
+  echo "<td>".$res['Mobile']."</td>";	
+  echo "<td>".$res['BloodGroup']."</td>";	
+
+  		
+}
+?>
+
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+
+
 
    
 
@@ -133,7 +213,29 @@
       </div>
     </footer>
     
-  
+  <!--===============================================================================================-->	
+	<script src="table/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="table/vendor/bootstrap/js/popper.js"></script>
+	<script src="table/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="table/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="table/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+			
+		
+	</script>
+<!--===============================================================================================-->
+	<script src="table/js/main.js"></script>
+
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
