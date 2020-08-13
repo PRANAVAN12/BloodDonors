@@ -14,7 +14,7 @@ if(isset($_POST['update']))
 	$City= mysqli_real_escape_string($mysqli, $_POST['City']);
 
 	// checking empty fields
-	if(empty($name) || empty($Email) || empty($email)|| empty($BloodGroup)|| empty($City)) {	
+	if(empty($UserName) || empty($Email) || empty($Mobile)|| empty($BloodGroup)|| empty($City)) {	
 			
 		if(empty($UserName)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
@@ -90,7 +90,7 @@ while($res = mysqli_fetch_array($result))
 				<td><input type="text" name="City" value="<?php echo $City;?>"></td>
 			</tr>
 			<tr>
-				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
+				<td><input type="hidden" name="id" value="<?php echo $_GET['id'];?>"></td>
 				<td><input type="submit" name="update" value="Update"></td>
 			</tr>
 		</table>
