@@ -27,20 +27,20 @@ $result = mysqli_query($mysqli, "SELECT * FROM request ORDER BY id DESC"); // us
     <link rel="stylesheet" href="css/jquery.timepicker.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="table/images/icons/favicon.ico"/>
+<link rel="icon" type="image/png" href="tab/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="table/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="tab/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="table/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="tab/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="table/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="tab/vendor/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="table/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="tab/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="table/vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="tab/vendor/perfect-scrollbar/perfect-scrollbar.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="table/css/util.css">
-	<link rel="stylesheet" type="text/css" href="table/css/main.css">
+	<link rel="stylesheet" type="text/css" href="tab/css/util.css">
+	<link rel="stylesheet" type="text/css" href="tab/css/main.css">
 <!--===============================================================================================-->
     
     <link rel="stylesheet" href="css/flaticon.css">
@@ -119,46 +119,46 @@ $result = mysqli_query($mysqli, "SELECT * FROM request ORDER BY id DESC"); // us
     	</div>
     </section>
    
-    <div class="limiter">
+	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
-				<div class="table100 ver1 m-b-110">
-					<div class="table100-head">
-						<table>
-							<thead>
-								<tr class="row100 head">
-									<th class="cell100 column1">UserName</th>
-									<th class="cell100 column2">Email</th>
-									<th class="cell100 column3">Mobile</th>
-									<th class="cell100 column4">BloodGroup</th>
-								
-								</tr>
-							</thead>
-						</table>
-					</div>
-
-					<div class="table100-body js-pscroll">
-						<table>
-							<tbody>
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+									<th class="column1">UserName</th>
+									<th class="column2">Email</th>
+									<th class="column3">Mobile</th>
+									<th class="column4">BloodGroup</th>
+									</tr>
+						</thead>
+						<tbody>
 							<?php 
-//while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
-while($res = mysqli_fetch_array($result)) { 		
-  echo "<tr>";
-  echo "<td>".$res['UserName']."</td>";
-  echo "<td>".$res['Email']."</td>";
-  echo "<td>".$res['Mobile']."</td>";	
-  echo "<td>".$res['BloodGroup']."</td>";	
 
-  		
+		while($res = mysqli_fetch_array($result)) { 		
+
+			echo "<tr>";
+
+			echo "<td >".$res['UserName']."</td>";
+
+			echo "<td >".$res['Email']."</td>";
+
+			echo "<td >".$res['Mobile']."</td>";	
+
+			echo "<td >".$res['BloodGroup']."</td>";	
+
+			
 }
 ?>
 
 								
 							</tbody>
 						</table>
-					</div>
-				</div>
-				
+						</div>
+			</div>
+		</div>
+	</div>
+
 
 
 
@@ -212,16 +212,15 @@ while($res = mysqli_fetch_array($result)) {
       
       </div>
     </footer>
-    
   <!--===============================================================================================-->	
-	<script src="table/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="tab/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="table/vendor/bootstrap/js/popper.js"></script>
-	<script src="table/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="tab/vendor/bootstrap/js/popper.js"></script>
+	<script src="tab/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="table/vendor/select2/select2.min.js"></script>
+	<script src="tab/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="table/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script src="tab/js/main.js"></script>
 	<script>
 		$('.js-pscroll').each(function(){
 			var ps = new PerfectScrollbar(this);
