@@ -35,7 +35,7 @@
 
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
-			$password = md5($password_1);//encrypt the password before saving in the database
+			
 			$query = "INSERT INTO members (UserName,Email,Mobile,BloodGroup, password) 
 					  VALUES('$UserName', '$Email', '$Mobile', '$BloodGroup' ,'$password')";
 			mysqli_query($db, $query);
@@ -62,7 +62,7 @@
 		}
 
 		if (count($errors) == 0) {
-			$password = md5($password);
+			
 			$query = "SELECT * FROM members WHERE UserName='$UserName' AND password='$password'";
 			$results = mysqli_query($db, $query);
 
@@ -70,6 +70,35 @@
 				$_SESSION['UserName'] = $UserName;
 				$_SESSION['success'] = "You are now logged in";
 				header('location:../MemberView.php');
+			}else {
+				array_push($errors, "Wrong UserName/password combination");
+			}
+		}
+	}
+
+	// Admin
+	if (isset($_POST['login_Admin'])) {
+		$UserName = filter_input(INPUT_POST, 'UserName');
+		$password = filter_input(INPUT_POST, 'password');
+		//$UserName = mysqli_real_escape_string()($db, $_POST['UserName']);
+	//	$password = mysqli_real_escape_string()($db, $_POST['password']);
+
+		if (empty($UserName)) {
+			array_push($errors, "UserName is required");
+		}
+		if (empty($password)) {
+			array_push($errors, "Password is required");
+		}
+
+		if (count($errors) == 0) {
+			
+			$query = "SELECT * FROM admin WHERE UserName='$UserName' AND password='$password'";
+			$results = mysqli_query($db, $query);
+
+			if (mysqli_num_rows($results) == 1) {
+				$_SESSION['UserName'] = $UserName;
+				$_SESSION['success'] = "You are now logged in";
+				header('location:../Admin.php');
 			}else {
 				array_push($errors, "Wrong UserName/password combination");
 			}
