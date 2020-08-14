@@ -37,7 +37,7 @@
 		if (count($errors) == 0) {
 			
 			$query = "INSERT INTO members (UserName,Email,Mobile,BloodGroup, password) 
-					  VALUES('$UserName', '$Email', '$Mobile', '$BloodGroup' ,'$password')";
+					  VALUES('$UserName', '$Email', '$Mobile', '$BloodGroup' ,'$password_1')";
 			mysqli_query($db, $query);
 
 			$_SESSION['UserName'] = $UserName;

@@ -73,12 +73,12 @@ $result = mysqli_query($mysqli, "SELECT * FROM request ORDER BY id DESC"); // us
         <div class="row no-gutters slider-text justify-content-center align-items-center">
           <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
           	<div class="text text-center">
-	            <h1 class="mb-4">Jaffna  <br>Blood Donors</h1>
+	            <h1 class="mb-4">Jaffn  <br>Blood Donors</h1>
 	            <form action="#" class="search-location mt-md-5">
 		        		<div class="row justify-content-center">
 		        			<div class="col-lg-10 align-items-end">
 		        				<div class="form-group">
-		          				<div class="form-field">
+								<div class="form-field">
 				                <input type="text" class="form-control" placeholder="Search Blood Group">
 				                <button><span class="ion-ios-search"></span></button>
 				              </div>
@@ -122,6 +122,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM request ORDER BY id DESC"); // us
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
+				
 				<div class="table100">
 					<table>
 						<thead>
